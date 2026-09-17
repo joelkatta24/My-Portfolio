@@ -1,6 +1,7 @@
 /* =============================================================
    1. REAL-TIME CANVAS PARTICLE NETWORK
 ============================================================= */
+
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -11,6 +12,7 @@ function resizeCanvas() {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
 }
+
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
@@ -42,7 +44,11 @@ class Particle {
 }
 
 // Instantiate particles
-const totalParticles = Math.min(Math.floor(window.innerWidth / 18), 65);
+const totalParticles = Math.min(
+  Math.floor(window.innerWidth / 18),
+  65
+);
+
 for (let i = 0; i < totalParticles; i++) {
   particles.push(new Particle());
 }
@@ -62,7 +68,9 @@ function animate() {
 
       if (dist < 110) {
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 110)})`;
+        ctx.strokeStyle =
+          `rgba(6, 182, 212, ${0.15 * (1 - dist / 110)})`;
+
         ctx.lineWidth = 0.6;
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
@@ -73,76 +81,106 @@ function animate() {
 
   requestAnimationFrame(animate);
 }
+
 animate();
+
 
 /* =============================================================
    2. MOBILE NAVIGATION DRAWER
 ============================================================= */
+
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const menuIcon = document.getElementById('menuIcon');
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  const isOpen = navLinks.classList.contains('active');
-  menuIcon.className = isOpen ? 'ph ph-x' : 'ph ph-list';
-});
+if (menuToggle && navLinks && menuIcon) {
 
-// Auto close mobile menu when link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    menuIcon.className = 'ph ph-list';
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    const isOpen = navLinks.classList.contains('active');
+
+    menuIcon.className = isOpen
+      ? 'ph ph-x'
+      : 'ph ph-list';
   });
-});
+
+  // Auto close mobile menu when link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuIcon.className = 'ph ph-list';
+    });
+  });
+}
+
 
 /* =============================================================
    3. PROJECT FILTERING
 ============================================================= */
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
+
+const filterButtons =
+  document.querySelectorAll('.filter-btn');
+
+const projectCards =
+  document.querySelectorAll('.project-card');
 
 filterButtons.forEach(button => {
+
   button.addEventListener('click', () => {
+
     // Toggle active state on buttons
-    filterButtons.forEach(btn => btn.classList.remove('active'));
+    filterButtons.forEach(btn =>
+      btn.classList.remove('active')
+    );
+
     button.classList.add('active');
 
-    const selectedFilter = button.getAttribute('data-filter');
+    const selectedFilter =
+      button.getAttribute('data-filter');
 
     projectCards.forEach(card => {
-      const category = card.getAttribute('data-category');
-      if (selectedFilter === 'all' || selectedFilter === category) {
+
+      const category =
+        card.getAttribute('data-category');
+
+      if (
+        selectedFilter === 'all' ||
+        selectedFilter === category
+      ) {
         card.style.display = 'flex';
       } else {
         card.style.display = 'none';
       }
+
     });
   });
+
 });
 
+
 /* =============================================================
-   4. CONTACT FORM & TOAST NOTIFICATION
+   4. CONTACT FORM
+   Formspree handles the submission directly.
+   
+   IMPORTANT:
+   Do NOT use event.preventDefault() here.
+   Do NOT use fetch() here.
+   Do NOT clear the form with JavaScript.
 ============================================================= */
-window.handleContactSubmit = function () {
-  const toast = document.getElementById('toast');
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
 
-  toast.classList.add('show');
-  
-  // Clear inputs
-  nameInput.value = '';
-  emailInput.value = '';
-  messageInput.value = '';
+// The contact form is intentionally handled by Formspree
+// through the HTML form action attribute.
 
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 4000);
-};
 
 /* =============================================================
    5. DYNAMIC YEAR
 ============================================================= */
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+const currentYear =
+  document.getElementById('currentYear');
+
+if (currentYear) {
+  currentYear.textContent =
+    new Date().getFullYear();
+}
