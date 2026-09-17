@@ -1,95 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Joel Katta | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joel Katta - Software Developer Portfolio">
+  <title>Joel Katta | Software Developer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="navbar">
+    <a href="#home" class="logo"><span>J</span>K</a>
 
-    <h1>Hi, I'm Joel Katta</h1>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="cv-link">↓ Download CV</a>
+    </nav>
 
-    <h2>Software Developer</h2>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
 
-    <p>
-        I build software, web applications and AI projects.
-    </p>
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-text reveal">
+        <span class="eyebrow">Hello, I'm</span>
+        <h1>Joel <span>Katta</span></h1>
+        <h2>Software Developer <b>|</b> Web Enthusiast <b>|</b> Lifelong Learner</h2>
+        <p>
+          I build responsive web applications, explore new technologies,
+          and turn ideas into practical solutions. Passionate about coding,
+          learning, and creating meaningful digital experiences.
+        </p>
 
-    <button>View My Projects</button>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">View My Projects <span>→</span></a>
+          <a href="#contact" class="btn outline">Contact Me <span>✉</span></a>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="socials">
+          <a href="https://github.com/joelkatta24" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="glow-orb">
+          <div class="initials">JK</div>
+        </div>
+        <div class="hero-note">Better<br>Code<br><span>Bigger Dreams</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-grid">
+        <div class="reveal">
+          <div class="section-title"><span></span><h2>About <em>Me</em></h2></div>
+          <p>
+            I'm Joel Katta, a passionate software developer interested in web
+            development, problem solving, AI, and technology. I enjoy building
+            projects, learning new skills, and turning ideas into working software.
+          </p>
+
+          <div class="facts">
+            <div><strong>20+</strong><small>Years</small></div>
+            <div><strong>India</strong><small>Location</small></div>
+            <div><strong>Developer</strong><small>Profession</small></div>
+          </div>
+
+          <a href="#skills" class="btn outline small">Explore Skills →</a>
+        </div>
+
+        <blockquote class="quote reveal">
+          <span class="quote-mark">“</span>
+          Technology is not just about machines; it's about people, ideas and a better tomorrow.
+          <cite>— Joel Katta</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-title reveal"><span></span><h2>My <em>Skills</em></h2></div>
+      <div class="skills-grid reveal">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">C / C++</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">React</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">VS Code</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Teamwork</div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading-row reveal">
+        <div class="section-title"><span></span><h2>My <em>Projects</em></h2></div>
+        <a href="https://github.com/joelkatta24" target="_blank" rel="noopener" class="view-all">View GitHub →</a>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-image drone">AERO<span>GUARD</span></div>
+          <div class="project-body">
+            <h3>AeroGuard AI – Drone Telemetry</h3>
+            <p>AI-powered Streamlit application using YOLO for object detection and drone monitoring.</p>
+            <div class="tags"><span>Python</span><span>Streamlit</span><span>YOLO</span></div>
+            <a href="#" class="project-link">→</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-image anime">ANIME<span>WATCHLIST</span></div>
+          <div class="project-body">
+            <h3>Anime Watchlist App</h3>
+            <p>A mobile application to discover, track, and manage your favorite anime.</p>
+            <div class="tags"><span>React Native</span><span>Firebase</span><span>Mobile</span></div>
+            <a href="#" class="project-link">→</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-image web">MY<span>PORTFOLIO</span></div>
+          <div class="project-body">
+            <h3>Personal Portfolio</h3>
+            <p>A responsive portfolio website showcasing my skills, projects, and development journey.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="https://github.com/joelkatta24/My-Portfolio" target="_blank" rel="noopener" class="project-link">→</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-grid">
+        <div class="reveal">
+          <div class="section-title"><span></span><h2>Get In <em>Touch</em></h2></div>
+          <p>I'm open to opportunities, collaborations, and interesting conversations.</p>
+        </div>
+
+        <div class="contact-items reveal">
+          <a href="mailto:your-email@example.com"><strong>✉</strong><span>Email<small>your-email@example.com</small></span></a>
+          <a href="#"><strong>in</strong><span>LinkedIn<small>Connect with me</small></span></a>
+          <a href="https://github.com/joelkatta24" target="_blank" rel="noopener"><strong>GH</strong><span>GitHub<small>joelkatta24</small></span></a>
+          <a href="mailto:your-email@example.com" class="btn primary">Send Message →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Joel Katta. All rights reserved.</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
-<section id="skills">
-
-    <h2>My Skills</h2>
-
-    <ul>
-        <li>Python</li>
-        <li>Java</li>
-        <li>C++</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Git</li>
-        <li>Linux</li>
-    </ul>
-
-</section>
-<section id="projects">
-
-    <h2>My Projects</h2>
-
-    <div class="project">
-
-        <h3>AeroGuard AI</h3>
-
-        <p>
-            An AI-based drone monitoring and
-            object detection application.
-        </p>
-
-        <p>
-            Technologies: Python, Streamlit, YOLO
-        </p>
-
-        <a href="#">GitHub</a>
-
-    </div>
-
-</section>
-<section id="education">
-
-    <h2>Education</h2>
-
-    <h3>Bachelor's Degree</h3>
-
-    <p>St.Ann's College Of Engineering And Technology (Autonomous), Chirala</p>
-
-    <p>2028</p>
-
-</section>
-<a href="resume.pdf" download>
-    Download My Resume
-</a>
-<section id="contact">
-
-    <h2>Contact Me</h2>
-
-    <p>Email: joelkatta24@gmail.com</p>
-
-    <p>
-        <a href="#">GitHub</a>
-    </p>
-
-    <p>
-        <a href="#">LinkedIn</a>
-    </p>
-
-</section>
