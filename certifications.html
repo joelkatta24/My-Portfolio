@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certifications | Joel.dev</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        .certifications-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 30px 80px;
+        }
+
+        .certifications-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .certifications-title h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 15px;
+        }
+
+        .certifications-title p {
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+
+        .certificate-card {
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+
+        .certificate-info {
+            padding: 25px;
+        }
+
+        .certificate-info h2 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .certificate-info p {
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .certificate-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .certificate-tags span {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            background: rgba(0, 229, 255, 0.06);
+        }
+
+        .view-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        .view-button:hover {
+            background: rgba(0, 229, 255, 0.1);
+        }
+
+        @media (max-width: 800px) {
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar-wrapper">
+
+        <nav class="nav-container">
+
+            <a href="index.html" class="brand-logo">
+                <span class="logo-symbol">&lt;/&gt;</span>
+                <span class="logo-name">
+                    Joel<span class="highlight-cyan">.dev</span>
+                </span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="index.html#about">About</a>
+                </li>
+
+                <li>
+                    <a href="index.html#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+
+                <li>
+                    <a href="certifications.html">Certifications</a>
+                </li>
+
+                <li>
+                    <a href="index.html#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <main>
+
+        <section class="certifications-container">
+
+            <div class="certifications-title">
+
+                <h1>Certifications</h1>
+
+                <p>
+                    Certifications, internships and professional
+                    learning achievements.
+                </p>
+
+            </div>
+
+
+            <div class="certificates-grid">
+
+
+                <!-- GENERATIVE AI INTERNSHIP -->
+
+                <article class="certificate-card">
+
+                    <a href="images/582.png" target="_blank">
+
+                        <img
+                            src="images/582.png"
+                            alt="Generative AI Internship Certificate"
+                            class="certificate-image"
+                        >
+
+                    </a>
+
+                    <div class="certificate-info">
+
+                        <h2>Generative AI Internship</h2>
+
+                        <p>
+                            Internship in Generative AI at
+                            TR Tech NexZen Solutions Pvt. Ltd.
+                        </p>
+
+                        <div class="certificate-tags">
+                            <span>Generative AI</span>
+                            <span>Internship</span>
+                            <span>2026</span>
+                        </div>
+
+                        <a
+                            href="images/GenAI Powered Data Analytics Job Simulation .png"
+                            target="_blank"
+                            class="view-button"
+                        >
+                            <i class="ph ph-eye"></i>
+                            View Certificate
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- AWS ESSENTIALS -->
+
+                <article class="certificate-card">
+
+                    <a href="images/Essentials Of Prompt Engineering-1.png" target="_blank">
+
+                        <img
+                            src="images/Essentials Of Prompt Engineering-1.png"
+                            alt="AWS Essentials of Prompt Engineering Certificate"
+                            class="certificate-image"
+                        >
+
+                    </a>
+
+                    <div class="certificate-info">
+
+                        <h2>Essentials of Prompt Engineering</h2>
+
+                        <p>
+                            AWS Training & Certification completion
+                            certificate.
+                        </p>
+
+                        <div class="certificate-tags">
+                            <span>AWS</span>
+                            <span>Prompt Engineering</span>
+                            <span>July 2026</span>
+                        </div>
+
+                        <a
+                            href="images/Essentials Of Prompt Engineering-1.png"
+                            target="_blank"
+                            class="view-button"
+                        >
+                            <i class="ph ph-eye"></i>
+                            View Certificate
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- AWS FOUNDATIONS -->
+
+                <article class="certificate-card">
+
+                    <a href="images/Foundations Of Prompt Engineering-1.png" target="_blank">
+
+                        <img
+                            src="images/Foundations Of Prompt Engineering-1.png"
+                            alt="AWS Foundations of Prompt Engineering Certificate"
+                            class="certificate-image"
+                        >
+
+                    </a>
+
+                    <div class="certificate-info">
+
+                        <h2>Foundations of Prompt Engineering</h2>
+
+                        <p>
+                            AWS Training & Certification completion
+                            certificate.
+                        </p>
+
+                        <div class="certificate-tags">
+                            <span>AWS</span>
+                            <span>Prompt Engineering</span>
+                            <span>July 2026</span>
+                        </div>
+
+                        <a
+                            href="images/Foundations Of Prompt Engineering-1.png"
+                            target="_blank"
+                            class="view-button"
+                        >
+                            <i class="ph ph-eye"></i>
+                            View Certificate
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TATA FORAGE -->
+
+                <article class="certificate-card">
+
+                    <a href="images/GenAI Powered Data Analytics Job Simulation .png" target="_blank">
+
+                        <img
+                            src="images/GenAI Powered Data Analytics Job Simulation .png"
+                            alt="GenAI Powered Data Analytics Job Simulation Certificate"
+                            class="certificate-image"
+                        >
+
+                    </a>
+
+                    <div class="certificate-info">
+
+                        <h2>GenAI Powered Data Analytics</h2>
+
+                        <p>
+                            Completed the GenAI Powered Data Analytics
+                            Job Simulation through Forage.
+                        </p>
+
+                        <div class="certificate-tags">
+                            <span>Tata</span>
+                            <span>Forage</span>
+                            <span>Data Analytics</span>
+                            <span>GenAI</span>
+                        </div>
+
+                        <a
+                            href="images/GenAI Powered Data Analytics Job Simulation .png"
+                            target="_blank"
+                            class="view-button"
+                        >
+                            <i class="ph ph-eye"></i>
+                            View Certificate
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Joel.dev — Built with code and creativity.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

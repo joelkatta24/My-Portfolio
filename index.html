@@ -1,167 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Joel Katta - Software Developer Portfolio">
-  <title>Joel Katta | Software Developer</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joel Katta | Software Developer & Creative Technologist</title>
+  
+  <!-- Google Fonts & Phosphor Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <a href="#home" class="logo"><span>J</span>K</a>
+  <!-- Ambient Glow Backgrounds -->
+  <div class="glow-sphere glow-sphere-1"></div>
+  <div class="glow-sphere glow-sphere-2"></div>
+  <canvas id="particleCanvas"></canvas>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="#" class="cv-link">↓ Download CV</a>
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-name">Joel<span class="highlight-cyan">.dev</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html#about">About</a></li>
+  <li><a href="index.html#skills">Skills</a></li>
+  <li><a href="projects.html">Projects</a></li>
+  <li><a href="certifications.html">Certifications</a></li>
+  <li><a href="index.html#contact">Contact</a></li>
+</ul>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-secondary nav-btn">Hire Me</a>
+        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Navigation">
+          <i class="ph ph-list" id="menuIcon"></i>
+        </button>
+      </div>
     </nav>
-
-    <div class="nav-actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-    </div>
   </header>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-text reveal">
-        <span class="eyebrow">Hello, I'm</span>
-        <h1>Joel <span>Katta</span></h1>
-        <h2>Software Developer <b>|</b> Web Enthusiast <b>|</b> Lifelong Learner</h2>
-        <p>
-          I build responsive web applications, explore new technologies,
-          and turn ideas into practical solutions. Passionate about coding,
-          learning, and creating meaningful digital experiences.
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="badge-status">
+        <span class="status-indicator"></span> Available for projects & opportunities
+      </div>
+      
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Joel Katta</span>
+      </h1>
+      
+      <h2 class="hero-subtitle">
+        Software Developer <span class="bullet">•</span> AI/ML Enthusiast <span class="bullet">•</span> Creative Technologist
+      </h2>
+      
+      <p class="hero-description">
+        I architect high-performance web applications, engineer intelligent AI solutions, and build secure digital experiences that merge clean logic with thoughtful visual design.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Work</span>
+          <i class="ph ph-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="ph ph-chat-centered-text"></i>
+          <span>Contact Me</span>
+        </a>
+        <a href="#about" class="btn btn-outline" id="resumeBtn">
+          <i class="ph ph-download-simple"></i>
+          <span>Resume</span>
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Commitment to Code Quality</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Full-Stack</div>
+          <div class="stat-label">Web & AI Integration</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Secure</div>
+          <div class="stat-label">Cybersecurity Mindset</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-container" id="about">
+    <div class="section-header">
+      <span class="section-tag">DISCOVER</span>
+      <h2 class="section-heading">About Me</h2>
+    </div>
+
+    <div class="about-grid">
+      <!-- Profile Picture Container -->
+      <div class="profile-card-wrapper">
+        <div class="profile-glow"></div>
+        <div class="profile-card">
+          <div class="image-frame">
+            <!-- Place your picture 'profile.jpg' in the same folder -->
+            <img 
+              src="images/profile.jpg" 
+              alt="Joel Katta" 
+              id="profileImg"
+              onerror="this.onerror=null; this.src='images/profile.jpg';"
+            />
+            <div class="image-gradient-overlay"></div>
+          </div>
+          <div class="profile-badge-overlay">
+            <i class="ph-fill ph-shield-check"></i>
+            <span>Engineering & Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio Content -->
+      <div class="about-content">
+        <h3 class="about-title">Bridging analytical rigor with creative technology.</h3>
+        
+        <p class="about-text">
+          B.Tech — Computer Science & Engineering (CSE – General)
+St. Ann's College of Engineering & Technology (Autonomous), Chirala
+Currently pursuing — 3rd Year
+
+Intermediate / 12th Grade
+Score: 89.1%
+
+10th Grade / SSC
+Score: 82.6%
         </p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn primary">View My Projects <span>→</span></a>
-          <a href="#contact" class="btn outline">Contact Me <span>✉</span></a>
-        </div>
+        <p class="about-text">
+          I am a software developer with a deep passion for modern programming, AI/ML models, scalable web technologies, and cybersecurity. I specialize in turning complex problems into intuitive, resilient digital systems.
+        </p>
 
-        <div class="socials">
-          <a href="https://github.com/joelkatta24" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Instagram">ig</a>
-          <a href="#" aria-label="YouTube">▶</a>
-        </div>
-      </div>
+        <p class="about-text">
+          My background balances engineering fundamentals with creative media, video/photo aesthetics, and interactive technologies. I believe that modern software should not only be fast and secure, but also beautifully engineered.
+        </p>
 
-      <div class="hero-visual reveal">
-        <div class="glow-orb">
-          <div class="initials">JK</div>
-        </div>
-        <div class="hero-note">Better<br>Code<br><span>Bigger Dreams</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-grid">
-        <div class="reveal">
-          <div class="section-title"><span></span><h2>About <em>Me</em></h2></div>
-          <p>
-            I'm Joel Katta, a passionate software developer interested in web
-            development, problem solving, AI, and technology. I enjoy building
-            projects, learning new skills, and turning ideas into working software.
-          </p>
-
-          <div class="facts">
-            <div><strong>20+</strong><small>Years</small></div>
-            <div><strong>India</strong><small>Location</small></div>
-            <div><strong>Developer</strong><small>Profession</small></div>
+        <!-- Focus areas -->
+        <div class="focus-grid">
+          <div class="focus-pill">
+            <i class="ph ph-terminal-window"></i> Software Engineering
           </div>
-
-          <a href="#skills" class="btn outline small">Explore Skills →</a>
-        </div>
-
-        <blockquote class="quote reveal">
-          <span class="quote-mark">“</span>
-          Technology is not just about machines; it's about people, ideas and a better tomorrow.
-          <cite>— Joel Katta</cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="section-title reveal"><span></span><h2>My <em>Skills</em></h2></div>
-      <div class="skills-grid reveal">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Python</div>
-        <div class="skill">C / C++</div>
-        <div class="skill">Git & GitHub</div>
-        <div class="skill">React</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">VS Code</div>
-        <div class="skill">Linux</div>
-        <div class="skill">Problem Solving</div>
-        <div class="skill">Teamwork</div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-heading-row reveal">
-        <div class="section-title"><span></span><h2>My <em>Projects</em></h2></div>
-        <a href="https://github.com/joelkatta24" target="_blank" rel="noopener" class="view-all">View GitHub →</a>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card reveal">
-          <div class="project-image drone">AERO<span>GUARD</span></div>
-          <div class="project-body">
-            <h3>AeroGuard AI – Drone Telemetry</h3>
-            <p>AI-powered Streamlit application using YOLO for object detection and drone monitoring.</p>
-            <div class="tags"><span>Python</span><span>Streamlit</span><span>YOLO</span></div>
-            <a href="#" class="project-link">→</a>
+          <div class="focus-pill">
+            <i class="ph ph-brain"></i> Machine Learning & AI
           </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-image anime">ANIME<span>WATCHLIST</span></div>
-          <div class="project-body">
-            <h3>Anime Watchlist App</h3>
-            <p>A mobile application to discover, track, and manage your favorite anime.</p>
-            <div class="tags"><span>React Native</span><span>Firebase</span><span>Mobile</span></div>
-            <a href="#" class="project-link">→</a>
+          <div class="focus-pill">
+            <i class="ph ph-shield-check"></i> Defensive Security
           </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-image web">MY<span>PORTFOLIO</span></div>
-          <div class="project-body">
-            <h3>Personal Portfolio</h3>
-            <p>A responsive portfolio website showcasing my skills, projects, and development journey.</p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <a href="https://github.com/joelkatta24/My-Portfolio" target="_blank" rel="noopener" class="project-link">→</a>
+          <div class="focus-pill">
+            <i class="ph ph-paint-brush"></i> UI/UX & Media Editing
           </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <div class="section-grid">
-        <div class="reveal">
-          <div class="section-title"><span></span><h2>Get In <em>Touch</em></h2></div>
-          <p>I'm open to opportunities, collaborations, and interesting conversations.</p>
-        </div>
-
-        <div class="contact-items reveal">
-          <a href="mailto:your-email@example.com"><strong>✉</strong><span>Email<small>your-email@example.com</small></span></a>
-          <a href="#"><strong>in</strong><span>LinkedIn<small>Connect with me</small></span></a>
-          <a href="https://github.com/joelkatta24" target="_blank" rel="noopener"><strong>GH</strong><span>GitHub<small>joelkatta24</small></span></a>
-          <a href="mailto:your-email@example.com" class="btn primary">Send Message →</a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>© 2026 Joel Katta. All rights reserved.</footer>
+  <!-- Skills Section -->
+  <section class="section-container" id="skills">
+    <div class="section-header">
+      <span class="section-tag">CAPABILITIES</span>
+      <h2 class="section-heading">Skills & Tooling</h2>
+    </div>
 
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon"><i class="ph ph-code"></i></div>
+        <h3>Core Programming</h3>
+        <p>Clean algorithms, resilient logic, and efficient architectural problem solving.</p>
+        <div class="tags-group">
+          <span>Python</span><span>JavaScript</span><span>TypeScript</span><span>C/C++</span><span>SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="ph ph-browsers"></i></div>
+        <h3>Web Technologies</h3>
+        <p>Full-stack modern interfaces, responsive layouts, API integrations, and scalable backends.</p>
+        <div class="tags-group">
+          <span>React.js</span><span>Node.js</span><span>Tailwind / Modern CSS</span><span>RESTful APIs</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="ph ph-cpu"></i></div>
+        <h3>AI & Machine Learning</h3>
+        <p>Exploring neural architectures, LLM integration, intelligent agents, and data modeling.</p>
+        <div class="tags-group">
+          <span>PyTorch</span><span>Model Prompting</span><span>NLP</span><span>Data Science</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="ph ph-lock-key"></i></div>
+        <h3>Cybersecurity & Systems</h3>
+        <p>Secure coding, web vulnerabilities evaluation, network security fundamentals, and system hygiene.</p>
+        <div class="tags-group">
+          <span>OWASP Top 10</span><span>Auth / JWT</span><span>Linux Ops</span><span>Network Protocols</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section-container" id="projects">
+    <div class="section-header">
+      <span class="section-tag">PORTFOLIO</span>
+      <h2 class="section-heading">Featured Creations</h2>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-wrapper">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai">AI & ML</button>
+      <button class="filter-btn" data-filter="web">Web Apps</button>
+      <button class="filter-btn" data-filter="security">Security</button>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card" data-category="ai">
+        <div class="project-inner">
+          <div class="project-category">AI / Full Stack</div>
+          <h3 class="project-title">Neural Semantic Analysis Hub</h3>
+          <p class="project-desc">Real-time intelligent text insight and entity classifier with neural processing pipelines and responsive UI visualization.</p>
+          <div class="project-stack">
+            <span>Python</span><span>FastAPI</span><span>PyTorch</span><span>React</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" data-category="web">
+        <div class="project-inner">
+          <div class="project-category">Web Platform</div>
+          <h3 class="project-title">Realtime Media Stream Engine</h3>
+          <p class="project-desc">A collaborative high-throughput media dashboard with instant synchronization, low latency feeds, and asset rendering.</p>
+          <div class="project-stack">
+            <span>Node.js</span><span>WebSockets</span><span>Modern CSS</span><span>PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card" data-category="security">
+        <div class="project-inner">
+          <div class="project-category">Cybersecurity</div>
+          <h3 class="project-title">Defensive Protocol Auditing Toolkit</h3>
+          <p class="project-desc">Lightweight network security analysis utility to scan misconfigurations, trace packet integrity, and produce audit reports.</p>
+          <div class="project-stack">
+            <span>Python</span><span>Bash</span><span>Socket API</span><span>Cryptography</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-container" id="contact">
+    <div class="section-header">
+      <span class="section-tag">CONNECT</span>
+      <h2 class="section-heading">Get In Touch</h2>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-card">
+        <form id="contactForm" onsubmit="event.preventDefault(); window.handleContactSubmit();">
+          <div class="input-row">
+            <div class="input-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="Jane Doe" />
+            </div>
+            <div class="input-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" required placeholder="jane@example.com" />
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required placeholder="Let's build something innovative together..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span>Send Message</span>
+            <i class="ph ph-paper-plane-tilt"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-wrapper">
+    <div class="footer-content">
+      <p>© <span id="currentYear"></span> Joel Katta. Engineered with modern web standards.</p>
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:contact@example.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast">Message received! Thank you for reaching out.</div>
+
+  <!-- Custom Script -->
   <script src="script.js"></script>
 </body>
 </html>
